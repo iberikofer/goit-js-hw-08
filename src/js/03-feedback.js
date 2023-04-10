@@ -28,12 +28,12 @@ if (getDataFromStorage) {
 form.addEventListener('submit', onSubmitFunc);
 function onSubmitFunc(e) {
   e.preventDefault();
-  emailInput.value = '';
-  messageInput.value = '';
   const result = {
     email: emailInput.value,
     message: messageInput.value,
   };
   console.log(result);
-  localStorage.clear();
+  emailInput.value = '';
+  messageInput.value = '';
+  localStorage.removeItem('feedback-form-state');
 }
